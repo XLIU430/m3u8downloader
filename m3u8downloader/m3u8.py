@@ -277,7 +277,7 @@ class M3u8Downloader:
                "-bsf:a", "aac_adtstoasc",
                target_mp4]
         logger.info("Running: %s", cmd)
-        proc = subprocess.run(cmd)
+        proc = subprocess.run(cmd, shell=True)
         if proc.returncode != 0:
             logger.error("run ffmpeg command failed: exitcode=%s",
                          proc.returncode)
